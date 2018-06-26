@@ -1,4 +1,9 @@
-# --- Bitmark Blockchain Performance Monitoring Graphs ----------------------------------------------------------------------------
+## Bitmark Blockchain Performance Monitoring Graphs 
+
+These routines extract data from the blockchain pertaining to inter-block time spacing, hashrate and difficulty.
+Data is saved in *.dat files for plotting via gnuplot scripts.
+
+Should evolve to be easily customized for any multiple proof-of-work (mPoW) blockchain.
 
 # Change to BlockChain Dynamics Plotting
  cd bld/bitmark-plots
