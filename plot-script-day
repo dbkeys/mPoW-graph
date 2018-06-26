@@ -1,0 +1,67 @@
+set xlabel "block number"
+set ylabel "block spacing [minutes]"
+set yrange [0:25]
+set terminal png size 600,300
+set output "bs_0_day.png"
+set arrow 10 from 0,16 to 500000,16 nohead
+plot "bs_0_day.dat" using 1:2 title 'SCRYPT'
+set output "bs_1_day.png"
+plot "bs_1_day.dat" using 1:2 title 'SHA256D'
+set output "bs_2_day.png"
+plot "bs_2_day.dat" using 1:2 title 'YESCRYPT'
+set output "bs_3_day.png"
+plot "bs_3_day.dat" using 1:2 title 'ARGON2'
+set output "bs_4_day.png"
+plot "bs_4_day.dat" using 1:2 title 'X17'
+set output "bs_5_day.png"
+plot "bs_5_day.dat" using 1:2 title 'LYRA2REv2'
+set output "bs_6_day.png"
+plot "bs_6_day.dat" using 1:2 title 'EQUIHASH'
+set output "bs_7_day.png"
+plot "bs_7_day.dat" using 1:2 title 'CRYPTONIGHT'
+set yrange [0:5]
+set arrow 10 from 0,2 to 500000,2 nohead
+set output "bs.png"
+plot "bs.dat" using 1:2 title 'Overall'
+
+set xlabel "block number"
+set ylabel "hashrate [h/s]"
+set yrange [:*]
+set terminal png size 600,300
+set output "hr_0_day.png"
+plot "hr_0_day.dat" using 1:2 title 'SCRYPT'
+set output "hr_1_day.png"
+plot "hr_1_day.dat" using 1:2 title 'SHA256D'
+set output "hr_2_day.png"
+plot "hr_2_day.dat" using 1:2 title 'YESCRYPT'
+set output "hr_3_day.png"
+plot "hr_3_day.dat" using 1:2 title 'ARGON2'
+set output "hr_4_day.png"
+plot "hr_4_day.dat" using 1:2 title 'X17'
+set output "hr_5_day.png"
+plot "hr_5_day.dat" using 1:2 title 'LYRA2REv2'
+set output "hr_6_day.png"
+plot "hr_6_day.dat" using 1:2 title 'EQUIHASH'
+set output "hr_7_day.png"
+plot "hr_7_day.dat" using 1:2 title 'CRYPTONIGHT'
+
+set xlabel "block number"
+set ylabel "difficulty"
+set yrange [:*]
+set terminal png size 600,300
+set output "df_0_day.png"
+plot "df_0_day.dat" using 1:2 title 'SCRYPT'
+set output "df_1_day.png"
+plot "df_1_day.dat" using 1:2 title 'SHA256D'
+set output "df_2_day.png"
+plot "df_2_day.dat" using 1:2 title 'YESCRYPT'
+set output "df_3_day.png"
+plot "df_3_day.dat" using 1:2 title 'ARGON2'
+set output "df_4_day.png"
+plot "df_4_day.dat" using 1:2 title 'X17'
+set output "df_5_day.png"
+plot "df_5_day.dat" using 1:2 title 'LYRA2REv2'
+set output "df_6_day.png"
+plot "df_6_day.dat" using 1:2 title 'EQUIHASH'
+set output "df_7_day.png"
+plot "df_7_day.dat" using 1:2 title 'CRYPTONIGHT'

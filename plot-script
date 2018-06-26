@@ -1,0 +1,90 @@
+set xlabel "block number"
+set xtics rotate by -45 720
+set ylabel "block spacing [minutes]"
+set yrange [0:25]
+set terminal png size 600,300
+
+#set arrow 10 from 458640,16 to 460500,16 nohead  back lw 3 lc rgb "orange"
+set arrow 10 from graph 0, first 16 to graph 1, first 16 nohead  lw 4 lc rgb "orange" front
+
+set label 15 "16 m in" at graph 0.8, first 20
+
+
+# BLOCK SPACING   ------------ Component ALgos
+set output "bs_0.png"
+plot "bs_0.dat" using 1:2 title 'SCRYPT'
+set output "bs_1.png"
+plot "bs_1.dat" using 1:2 title 'SHA256D'
+set output "bs_2.png"
+plot "bs_2.dat" using 1:2 title 'YESCRYPT'
+set output "bs_3.png"
+plot "bs_3.dat" using 1:2 title 'ARGON2'
+set output "bs_4.png"
+plot "bs_4.dat" using 1:2 title 'X17'
+set output "bs_5.png"
+plot "bs_5.dat" using 1:2 title 'LYRA2REv2'
+set output "bs_6.png"
+plot "bs_6.dat" using 1:2 title 'EQUIHASH'
+set output "bs_7.png"
+plot "bs_7.dat" using 1:2 title 'CRYPTONIGHT'
+
+# BLOCK SPACING -------------- Overall Composite
+#set terminal png size 1200 600
+set yrange [0:5]
+set label 25 "2 min" at graph 0.8, first 3.5
+
+unset arrow 10
+set arrow 30 from graph 0.01, first 2 to graph 0.995, first 2 nohead lw 4 lc rgb "green" front
+set output "bs.png"
+plot "bs.dat" using 1:2 title '8 Algo Composite - Overall'
+
+unset arrow 30
+unset label 15
+unset label 25
+
+
+# HASHRATE
+set xlabel "block number"
+set xtics rotate by -45 720
+set ylabel "hashrate [h/s]"
+set yrange [:*]
+set terminal png size 600,300
+set output "hr_0.png"
+plot "hr_0.dat" using 1:2 title 'SCRYPT'
+set output "hr_1.png"
+plot "hr_1.dat" using 1:2 title 'SHA256D'
+set output "hr_2.png"
+plot "hr_2.dat" using 1:2 title 'YESCRYPT'
+set output "hr_3.png"
+plot "hr_3.dat" using 1:2 title 'ARGON2'
+set output "hr_4.png"
+plot "hr_4.dat" using 1:2 title 'X17'
+set output "hr_5.png"
+plot "hr_5.dat" using 1:2 title 'LYRA2REv2'
+set output "hr_6.png"
+plot "hr_6.dat" using 1:2 title 'EQUIHASH'
+set output "hr_7.png"
+plot "hr_7.dat" using 1:2 title 'CRYPTONIGHT'
+
+# DIFFICULTY
+set xlabel "block number"
+set xtics rotate by -45 720
+set ylabel "difficulty"
+set yrange [:*]
+set terminal png size 600,300
+set output "df_0.png"
+plot "df_0.dat" using 1:2 title 'SCRYPT'
+set output "df_1.png"
+plot "df_1.dat" using 1:2 title 'SHA256D'
+set output "df_2.png"
+plot "df_2.dat" using 1:2 title 'YESCRYPT'
+set output "df_3.png"
+plot "df_3.dat" using 1:2 title 'ARGON2'
+set output "df_4.png"
+plot "df_4.dat" using 1:2 title 'X17'
+set output "df_5.png"
+plot "df_5.dat" using 1:2 title 'LYRA2REv2'
+set output "df_6.png"
+plot "df_6.dat" using 1:2 title 'EQUIHASH'
+set output "df_7.png"
+plot "df_7.dat" using 1:2 title 'CRYPTONIGHT'

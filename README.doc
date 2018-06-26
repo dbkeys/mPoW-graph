@@ -1,0 +1,85 @@
+# --- Bitmark Blockchain Performance Monitoring Graphs ----------------------------------------------------------------------------
+
+# Change to BlockChain Dynamics Plotting
+ cd bld/bitmark-plots
+
+# View & Adjust Scripts that generate Data 
+ e plot_bs.sh
+ e plot_hr.sh
+ e plot_df.sh
+
+# Generate Graphs
+ nohup ./update_plots.sh &
+
+# Monitor any error conditions
+ tail -f nohup.out
+      _or_
+ less nohup.out 
+
+
+
+### --- Reference ------------------------------------------------------------------------------------------------------------------
+
+#[gnuplot overlapping labels]
+https://stackoverflow.com/questions/42806328/labels-overlap-in-gnuplot
+https://askubuntu.com/questions/10432/gnuplot-remove-overlapping-between-xtick-labels
+	One solution:
+		rotate labels with:
+			set xtics rotate by -45
+		This rotates tick labels at the x-axis by -45°.
+-
+https://groups.google.com/forum/#!topic/comp.graphics.apps.gnuplot/6OVquWMFp30
+
+
+# tics
+http://gnuplot.sourceforge.net/docs_4.2/node295.html
+
+#[gnuplot tics spacing]
+
+https://stackoverflow.com/questions/24976412/spacing-between-tics-in-gnuplot
+	set xtics <start>, <increment>, <end>
+
+# Linetype, colors & styles
+http://gnuplot.sourceforge.net/docs_4.2/node62.html
+
+http://soc.if.usp.br/manual/gnuplot-doc/htmldocs/arrow.html
+
+Color: Colornames
+		Gnuplot knows a limited number of color names. You can use these to define the color range spanned by a pm3d palette, or to assign a terminal-independent colot to a particular linetype or linestyle. To see the list of know color names, use the command show palette colornames
+	See: gnuplot.colors.doc  file
+http://gnuplot.sourceforge.net/docs_4.2/node222.html
+
+# [gnuplot turn off arrow]
+	A:  unset arrow {<tag>}
+
+https://stackoverflow.com/questions/15553988/how-to-draw-just-arrow-in-gnuplot
+https://stackoverflow.com/questions/24782815/how-to-change-the-color-of-an-arrow
+// Set Arrow Style
+http://gnuplot.sourceforge.net/docs_4.2/node232.html
+https://stackoverflow.com/questions/38503453/gnuplot-range-for-arrows-how-do-i-stop-them-from-appearing-beside-the-diagram
+
+http://soc.if.usp.br/manual/gnuplot-doc/htmldocs/arrow.html
+Syntax:https://stackoverflow.com/questions/38503453/gnuplot-range-for-arrows-how-do-i-stop-them-from-appearing-beside-the-diagram
+
+http://soc.if.usp.br/manual/gnuplot-doc/htmldocs/arrow.html
+		Syntax:
+			   set arrow {<tag>} {from <position>} {to|rto <position>}
+				     { {arrowstyle | as <arrow_style>}
+				       | { {nohead | head | backhead | heads}
+					   {size <length>,<angle>{,<backangle>}}
+					   {filled | empty | nofilled}
+					   {front | back}
+					   { {linestyle | ls <line_style>}
+					     | {linetype | lt <line_type>}
+					       {linewidth | lw <line_width} } } }
+		     
+			   unset arrow {<tag>}
+			   show arrow {<tag>}
+
+# [gnuplot script comment]
+Comment lines in gnuplot start with # 
+Comment blocks per-se are not allowed in gnuplot, but this page suggests a work-around:
+https://stackoverflow.com/questions/28050498/block-comments-in-gnuplot
+
+-
+http://gnuplot-tricks.blogspot.com/2009/05/gnuplot-tricks-many-say-that-it-is.html
