@@ -7,7 +7,7 @@ set terminal png size 600,300
 #set arrow 10 from 458640,16 to 460500,16 nohead  back lw 3 lc rgb "orange"
 set arrow 10 from graph 0, first 16 to graph 1, first 16 nohead  lw 4 lc rgb "orange" front
 
-set label 15 "16 m in" at graph 0.8, first 20
+set label 15 "16 min" at graph 0.8, first 20
 
 
 # BLOCK SPACING   ------------ Component ALgos
@@ -43,12 +43,13 @@ unset label 15
 unset label 25
 
 
-# HASHRATE
+# HASHRATE ----------------------------------
 set xlabel "block number"
 set xtics rotate by -45 720
 set ylabel "hashrate [h/s]"
 set yrange [:*]
 set terminal png size 600,300
+
 set output "hr_0.png"
 plot "hr_0.dat" using 1:2 title 'SCRYPT'
 set output "hr_1.png"
@@ -66,7 +67,7 @@ plot "hr_6.dat" using 1:2 title 'EQUIHASH'
 set output "hr_7.png"
 plot "hr_7.dat" using 1:2 title 'CRYPTONIGHT'
 
-# DIFFICULTY
+# DIFFICULTY ---------------------------------
 set xlabel "block number"
 set xtics rotate by -45 720
 set ylabel "difficulty"
