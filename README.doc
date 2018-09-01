@@ -29,7 +29,11 @@ Should evolve to be easily customized for any multiple proof-of-work (mPoW) bloc
  less nohup.out 
 
 
+### TODO
 
+# sub-directory soft-links
+latest				<---- latest complete graph set
+in-progress			<---- graph set under construction
 ### --- Reference ------------------------------------------------------------------------------------------------------------------
 
 #[gnuplot overlapping labels]
