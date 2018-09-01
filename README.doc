@@ -3,7 +3,14 @@
 These routines extract data from the blockchain pertaining to inter-block time spacing, hashrate and difficulty.
 Data is saved in *.dat files for plotting via gnuplot scripts.
 
+Focused on the 8-algo Bitmark (MARKS) blockchain.
+
 Should evolve to be easily customized for any multiple proof-of-work (mPoW) blockchain.
+
+
+# Running mPoW-Plot
+  nohup ./update_plots.sh     > nohup.7day.out&
+  nohup ./update_plots_day.sh > nohup.1day.out&
 
 # Change to BlockChain Dynamics Plotting
  cd bld/bitmark-plots
