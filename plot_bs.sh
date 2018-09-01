@@ -7,9 +7,11 @@ bitmarkcli="bitmark-cli -datadir=/home/coins/.bitmark"
 
 max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F  ',' '{print $1 }')"
 
+# Famous block in Bitmark History	;)
 # 446500
 # 458640 = Bitmark day 637 ( start of 637th 720-block period )
 # block_start=458640
+
 # 10 days back
 # let block_start=$max_height-7200
 # 7 days back

@@ -12,6 +12,7 @@ max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F 
 #block_start=460800
 # 10 days back
 #let block_start=$max_height-7200
+
 #  7 day start
 let block_start=$max_height-5040
 
