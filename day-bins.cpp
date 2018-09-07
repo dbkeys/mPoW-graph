@@ -7,6 +7,7 @@
 #include <unistd.h>
 
 /*  ------------   Graph Bitmark Emission History.   ---------------------------------------------*/ 
+// Currently hard coded for a specific time period
 int main() {
 
     time_t current_time;
