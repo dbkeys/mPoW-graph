@@ -1,0 +1,98 @@
+set xlabel "block number"
+set xtics rotate by -55 30
+set ylabel "block spacing [milliseconds]"
+# yrange 25 minutes = 60 secs/min * 1000 ms/sec * 25 mins = 1500000
+#set yrange [0:25]
+set yrange [0:1500000]
+#set terminal png size 600,300
+#set terminal png size 640,320
+#set terminal png size 1080,640
+set terminal png size 600,300
+
+#set arrow 10 from graph 0, first 16 to graph 1, first 16 nohead lw 4 lc rgb "orange" front
+set arrow 10 from graph 0, first 960000 to graph 1, first 960000 nohead lw 4 lc rgb "orange" front
+
+# 20 minutes = x ms = 20 mins * 1000 ms/sec * 60 secs/min = 1200000 ms
+set label 15 "16 min = 960,000 ms" at graph 0.16, first 1050000
+
+# INTER BLOCK SPACING ----------  Component Algos
+set output "bs_0_hour.png"
+plot "bs_0_hour.dat" using ($1):($2*60000) title 'SCRYPT'
+set output "bs_1_hour.png"
+plot "bs_1_hour.dat" using ($1):($2*60000) title 'SHA256D'
+set output "bs_2_hour.png"
+plot "bs_2_hour.dat" using ($1):($2*60000) title 'YESCRYPT'
+set output "bs_3_hour.png"
+plot "bs_3_hour.dat" using ($1):($2*60000) title 'ARGON2'
+set output "bs_4_hour.png"
+plot "bs_4_hour.dat" using ($1):($2*60000) title 'X17'
+set output "bs_5_hour.png"
+plot "bs_5_hour.dat" using ($1):($2*60000) title 'LYRA2REv2'
+set output "bs_6_hour.png"
+plot "bs_6_hour.dat" using ($1):($2*60000) title 'EQUIHASH'
+set output "bs_7_hour.png"
+plot "bs_7_hour.dat" using ($1):($2*60000) title 'CRYPTONIGHT'
+
+# BLOCK SPACING -------------- Overall Composite
+set yrange [0:5]
+set label 25 "2 min" at graph 0.7, first 3.5
+
+unset arrow 10
+set arrow 30 from graph 0.01, first 2 to graph 0.995, first 2 nohead lw 4 lc rgb "green" front
+set xtics rotate by -55 60
+set output "bs_hour.png"
+plot "bs_hour.dat" using ($1):2 title '8 Algorithm Composite - Overall'
+
+unset arrow 30
+unset label 15
+unset label 25
+
+# HASHRATE --------------------------------------
+set xlabel "block number"
+set xtics rotate by -45 60
+set ylabel "hashrate [h/s]"
+set yrange [:*]
+
+set terminal png size 600,300
+#set terminal png size 1080,640
+
+set output "hr_0_hour.png"
+plot "hr_0_hour.dat" using ($1):2 title 'SCRYPT'
+set output "hr_1_hour.png"
+plot "hr_1_hour.dat" using ($1):2 title 'SHA256D'
+set output "hr_2_hour.png"
+plot "hr_2_hour.dat" using ($1):2 title 'YESCRYPT'
+set output "hr_3_hour.png"
+plot "hr_3_hour.dat" using ($1):2 title 'ARGON2'
+set output "hr_4_hour.png"
+plot "hr_4_hour.dat" using ($1):2 title 'X17'
+set output "hr_5_hour.png"
+plot "hr_5_hour.dat" using ($1):2 title 'LYRA2REv2'
+set output "hr_6_hour.png"
+plot "hr_6_hour.dat" using ($1):2 title 'EQUIHASH'
+set output "hr_7_hour.png"
+plot "hr_7_hour.dat" using ($1):2 title 'CRYPTONIGHT'
+
+# DIFFICULTY ------------------------------------
+set xlabel "block number"
+set xtics rotate by -45 60
+set ylabel "difficulty"
+set yrange [:*]
+set terminal png size 600,300
+#set terminal png size 1080,640
+set output "df_0_hour.png"
+plot "df_0_hour.dat" using ($1):2 title 'SCRYPT'
+set output "df_1_hour.png"
+plot "df_1_hour.dat" using ($1):2 title 'SHA256D'
+set output "df_2_hour.png"
+plot "df_2_hour.dat" using ($1):2 title 'YESCRYPT'
+set output "df_3_hour.png"
+plot "df_3_hour.dat" using ($1):2 title 'ARGON2'
+set output "df_4_hour.png"
+plot "df_4_hour.dat" using ($1):2 title 'X17'
+set output "df_5_hour.png"
+plot "df_5_hour.dat" using ($1):2 title 'LYRA2REv2'
+set output "df_6_hour.png"
+plot "df_6_hour.dat" using ($1):2 title 'EQUIHASH'
+set output "df_7_hour.png"
+plot "df_7_hour.dat" using ($1):2 title 'CRYPTONIGHT'

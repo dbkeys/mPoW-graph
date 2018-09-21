@@ -14,6 +14,7 @@ max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F 
 # let block_start=$max_height-7200
 #  7 days back
 let block_start=$max_height-5040
+echo "from: $block_start   ----->  to: $max_height"
 
 # https://chainquery.com/bitcoin-api/getnetworkhashps
 # bitmark abbreviation: gnhps

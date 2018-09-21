@@ -1,0 +1,20 @@
+#!/bin/bash
+# Test Sleep Announcements
+
+# Update 2-hour plots about every 15 minutes
+UnixTimeSTR=$(date "+%s")
+WakeUpTime=$(($UnixTimeSTR + 1))
+printf "sleeping for 1 seconds (Until $WakeUpTime)\n"
+sleep 1
+
+UnixTimeSTR=$(date "+%s")
+WakeUpTime=$(($UnixTimeSTR + 2  ))
+WkUpTmSTR=$(date -d @$WakeUpTime +'%m/%d %H:%M:%S %Z %z')
+printf "sleeping for 2 seconds (Until $WkUpTmSTR : $WakeUpTime)\n"
+sleep 2
+
+UnixTimeSTR=$(date "+%s")
+WakeUpTime=$(($UnixTimeSTR + 5  ))
+WkUpTmSTR=$(date -d @$WakeUpTime +'%m/%d %H:%M:%S %Z')
+printf "sleeping for 5 seconds (Until $WkUpTmSTR : $WakeUpTime)\n"
+sleep 5

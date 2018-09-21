@@ -15,6 +15,7 @@ max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F 
 
 #  7 day start
 let block_start=$max_height-5040
+echo "from: $block_start   ----->  to: $max_height"
 
 # 458640 start of Bitmark 637th 720-block period
 

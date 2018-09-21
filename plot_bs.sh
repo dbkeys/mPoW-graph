@@ -16,6 +16,7 @@ max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F 
 # let block_start=$max_height-7200
 # 7 days back
 let block_start=$max_height-5040
+echo "from: $block_start   ----->  to: $max_height"
 
 # {-1..7} Algo "-1" means all blocks, regardless of actual algo
 # Block spacing overall should average 2 minutes

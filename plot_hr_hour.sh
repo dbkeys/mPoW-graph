@@ -1,15 +1,16 @@
 #!/bin/bash
 
-echo "plot_hr_day.sh  Hash Rate (720 block look back)"
-nblocks=720
+# 90  blocks / hour
+# 720 blocks / day
 
-rm -f hr_*_day.dat
+echo "plot_hr_hour.sh  Hash Rate (90 block look back)"
+nblocks=90
+
+rm -f hr_*_hour.dat
 
 bitmarkcli="bitmark-cli -datadir=/home/coins/.bitmark"
 
 max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F  ',' '{print $1 }')"
-start_height=$((max_height-nblocks))
-echo "from start_height: $start_height  --->   to max height: $max_height"
 
 # https://chainquery.com/bitcoin-api/getnetworkhashps
 # bitmark abbreviation: gnhps
@@ -25,11 +26,11 @@ echo "from start_height: $start_height  --->   to max height: $max_height"
 #--------------------------------------------------------------------------------------------------
 for algo in {0..7}
 do
-    #start_height=$((max_height-nblocks))
+    start_height=$((max_height-nblocks))
     for height in $(seq $start_height $max_height)
     do
         x="$height"
         y="$($bitmarkcli getnetworkhashps 24 $height $algo)"
-        echo "$x $y" >> hr_"$algo"_day.dat
+        echo "$x $y" >> hr_"$algo"_hour.dat
     done
 done
