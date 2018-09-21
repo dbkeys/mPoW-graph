@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# 2-Hour Graphs 
+# mPoW-graph
+# 2-Hour Look-Back Graphs 
 
 #set -e
 

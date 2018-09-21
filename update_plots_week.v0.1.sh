@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#  Week Plots  (Overall Plots)
+#  mPoW-graphs
+#  1-Week Look-Back Graphs  (Overall Plots)
 
 #set -e
 

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# One Day 
+# mPoW-graph
+# 1-Day Look-Back Graphs 
 
 #set -e
 
