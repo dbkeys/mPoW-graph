@@ -8,18 +8,20 @@
 
 int main() {
 
-    time_t current_time;
-    char* c_time_string;
+    time_t  current_time;
+    char*   c_time_string;
 
-    int i;
+    int     i;
 
-    long secshour=3600;
-    long secsday=86400; 
-    long secsweek=604800;
+    long    secshour=3600;
+    long     secsday=86400; 
+    long    secsweek=604800;
 
 
     struct days_eM {
+       // start second,   end second
        long ssec, esec;
+       // emission
        float Emmy;
     };
 
@@ -29,8 +31,11 @@ int main() {
     long omega=1533906654;
     long span = omega - alfa;
 
+    // how many: enough bins for every hour in the time span
     long totbins = trunc(span / secshour) +1;
+
     long hours[totbins];
+    // for every hour, store start, end seconds and emission within that time span
     hours_eM dMarks[totbins];
 
     days[0]=alfa;
