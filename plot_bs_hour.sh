@@ -5,9 +5,10 @@
 # 90 blocks/ hour
 
 rm -f bs_*_hour.dat
-echo "plot_bs_hour.sh  Block Spacing (90 block look back)"
 
-nblocks=90
+nblocks=30
+echo "plot_bs_hour.sh  Block Spacing ($nblocks block look back)"
+
 bitmarkcli="bitmark-cli -datadir=/home/coins/.bitmark"
 
 max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F  ',' '{print $1 }')"

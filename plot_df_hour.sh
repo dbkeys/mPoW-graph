@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# 90 blocks / hour
+# 30 blocks / hour
 # 720 blocks / day
 
-echo "plot_df_hour.sh  Difficulty (90 block look back)"
-nblocks=90
+nblocks=30
+echo "plot_df_hour.sh  Difficulty ($nblocks block look back)"
 
 rm -f df_*_hour.dat
 
