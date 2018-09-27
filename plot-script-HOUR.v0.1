@@ -1,9 +1,12 @@
 set xlabel "block number"
-set xtics rotate by -55 30
-set ylabel "block spacing [milliseconds]"
+set xtics rotate by -55 3.75
+#set ylabel "block spacing [milliseconds]"
+set ylabel "block time [milli secs]"
 # yrange 25 minutes = 60 secs/min * 1000 ms/sec * 25 mins = 1500000
 #set yrange [0:25]
-set yrange [0:1500000]
+#set yrange [0:1500000]
+set yrange [*<800000:1200000<*]
+
 #set terminal png size 600,300
 #set terminal png size 640,320
 #set terminal png size 1080,640
@@ -34,12 +37,17 @@ set output "bs_7_hour.png"
 plot "bs_7_hour.dat" using ($1):($2*60000) title 'CRYPTONIGHT'
 
 # BLOCK SPACING -------------- Overall Composite
-set yrange [0:5]
+#set yrange [0.5:4]
+#set yrange [GPVAL_DATA_Y_MIN-0.5:GPVAL_DATA_Y_MAX+0.5]
+#set yrange [*:*]
+#set yrange [0.5<*:*<4.0]
+set yrange [* < 0.5:4.0 < *]
+
 set label 25 "2 min" at graph 0.7, first 3.5
 
 unset arrow 10
 set arrow 30 from graph 0.01, first 2 to graph 0.995, first 2 nohead lw 4 lc rgb "green" front
-set xtics rotate by -55 60
+set xtics rotate by -55 3.75
 set output "bs_hour.png"
 plot "bs_hour.dat" using ($1):2 title '8 Algorithm Composite - Overall'
 
@@ -49,9 +57,10 @@ unset label 25
 
 # HASHRATE --------------------------------------
 set xlabel "block number"
-set xtics rotate by -45 60
+set xtics rotate by -45 3.75
 set ylabel "hashrate [h/s]"
-set yrange [:*]
+#set yrange [:*]
+set yrange [*:*]
 
 set terminal png size 600,300
 #set terminal png size 1080,640
@@ -75,7 +84,7 @@ plot "hr_7_hour.dat" using ($1):2 title 'CRYPTONIGHT'
 
 # DIFFICULTY ------------------------------------
 set xlabel "block number"
-set xtics rotate by -45 60
+set xtics rotate by -45 3.75
 set ylabel "difficulty"
 set yrange [:*]
 set terminal png size 600,300

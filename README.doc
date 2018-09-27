@@ -34,6 +34,27 @@ Should evolve to be easily customized for any multiple proof-of-work (mPoW) bloc
 # sub-directory soft-links
 latest				<---- latest complete graph set
 in-progress			<---- graph set under construction
+
+Different PID's can work on building in-progress
+
+https://unix.stackexchange.com/questions/87284/how-to-share-environment-variables-between-shells-like-globals-related-to-a-mast
+environment variables flag completion: use 'fish' shell, universally scoped variables: set -U var value
+	state / configuration file ?
+	write in C, interprocess communication
+
+mpowDAY
+mpowSEM // Week
+mpowOVL // Overall
+
+---
+CEM functioning graphs
+peak hashrate by time-bins
+statistical significance
+
+cemCURR	// current period
+cemWEEK // one week period
+cemWNDW // whole lookback window
+
 ### --- Reference ------------------------------------------------------------------------------------------------------------------
 
 #[gnuplot overlapping labels]
@@ -99,3 +120,11 @@ https://stackoverflow.com/questions/28050498/block-comments-in-gnuplot
 
 -
 http://gnuplot-tricks.blogspot.com/2009/05/gnuplot-tricks-many-say-that-it-is.html
+
+--------
+
+Development Platforms
+
+rg:		Ubuntu 14
+nxus:		Ubuntu 16
+ikhbev:		Ubuntu 18

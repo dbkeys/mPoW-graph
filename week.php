@@ -1,8 +1,5 @@
 <table>
 <tr>
-<td><img src="bs.png?nocache=<?php echo time(); ?>" />
-</tr>
-<tr>
 <td><img src="bs_0.png?nocache=<?php echo time(); ?>" /></td>
 <td><img src="bs_1.png?nocache=<?php echo time(); ?>" /></td>
 <td><img src="bs_2.png?nocache=<?php echo time(); ?>" /></td>
@@ -11,6 +8,7 @@
 <td><img src="bs_5.png?nocache=<?php echo time(); ?>" /></td>
 <td><img src="bs_6.png?nocache=<?php echo time(); ?>" /></td>
 <td><img src="bs_7.png?nocache=<?php echo time(); ?>" /></td>
+<td><img src="bs.png?nocache=<?php echo time(); ?>" />
 </tr>
 <tr>
 <td><img src="hr_0.png?nocache=<?php echo time(); ?>" /></td>
