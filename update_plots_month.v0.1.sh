@@ -18,7 +18,6 @@ do
     mkdir $UnixTimeSTR
     ln -s $UnixTimeSTR inprog.MONTH
     cp index.php $UnixTimeSTR
-    cp day.php $UnixTimeSTR
     printf "\nGoing into folder ..."
     cd $UnixTimeSTR
 
