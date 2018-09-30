@@ -1,7 +1,7 @@
 set xlabel "block number"
-set xtics rotate by -45 50400
+set xtics rotate by -45 10000
 set ylabel "block spacing [minutes]"
-set yrange [0:25]
+set yrange [0:30]
 set terminal png size 600,300
 
 #set arrow 10 from 458640,16 to 460500,16 nohead  back lw 3 lc rgb "orange"
@@ -45,7 +45,7 @@ unset label 25
 
 # HASHRATE ----------------------------------
 set xlabel "block number"
-set xtics rotate by -45 50400
+set xtics rotate by -45 10000
 set ylabel "hashrate [h/s]"
 set yrange [:*]
 set terminal png size 600,300
@@ -69,7 +69,7 @@ plot "hr_7.dat" using 1:2 title 'CRYPTONIGHT'
 
 # DIFFICULTY ---------------------------------
 set xlabel "block number"
-set xtics rotate by -45 50400
+set xtics rotate by -45 10000
 set ylabel "difficulty"
 set yrange [:*]
 set terminal png size 600,300
