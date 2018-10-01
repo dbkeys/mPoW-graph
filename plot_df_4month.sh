@@ -3,16 +3,14 @@
 
 bitmarkcli="bitmark-cli -datadir=/home/coins/.bitmark"
 
-echo $bitmarkcli
-
 rm -f df_*.dat
 
-max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F  ',' '{print $1 }')"
-# 10 days back
-#let block_start=$max_height-7200
+# 4 months is about  ~120  days back
+# 120 * 720 = 86400   // "A block for every second in a day "
+#let block_start=$max_height-86400
+block_start=$1
+max_height=$2
 
-#  120 day start
-let block_start=$max_height-86400
 echo "from: $block_start   ----->  to: $max_height"
 
 for algo in {0..7}
