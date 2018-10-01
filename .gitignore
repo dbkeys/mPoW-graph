@@ -7,4 +7,5 @@ nohup.out
 2020*
 previo.*
 latest.*
-in-prog**
+in-prog*
+inprog*
