@@ -30,9 +30,10 @@ do
     ### start_height=450947 // example fixed start height: start of mPoW blocks
     # 4 months is about  ~120  days back
     # 120 * 720 = 86400   // "A block for every second in a day "
-    # let start_height=$max_height-86400
+    let start_height=$max_height-86400
 
-    printf "Extracting Data for Plots ...\n"
+    BgnTimSTR=$(date "+%Y%b%d_%H:%M:%S")
+    printf "%s - Extracting Data for Plots ...\n" $BgnTimSTR
     time ../plot_bs_4month.sh $start_height $max_height
     time ../plot_hr_4month.sh $start_height $max_height
     time ../plot_df_4month.sh $start_height $max_height

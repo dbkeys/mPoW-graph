@@ -1,8 +1,6 @@
 #!/bin/bash
 
 #  mPoW-graphs
-#  First Quarter of 8mPoW Blocks
-# 450947		2018-Jun-07 04:58:55 First post-fork non Scrypt block (Lyra2REv2) 
 
 #set -e
 
@@ -24,13 +22,15 @@ cd $UnixTimeSTR
 echo "Determining latest block ... "
 #max_height.MARKS.sh /// use da fish shell !!
 bitmarkcli="bitmark-cli -datadir=/home/coins/.bitmark"
+#  First Quarter of 8mPoW Blocks
+# 450947		2018-Jun-07 04:58:55 First post-fork non Scrypt block (Lyra2REv2) 
 start_height=450947
 ###start_height=$(($max_height-72))
 max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F  ',' '{print $1 }')"
 echo "Max Height: "$max_height
-printf "\nCurrent block height is: %s\n" $max_height
-
-printf "Extracting Data for Plots ...\n"
+printf "\nCurrent block height is: %s" $max_height
+BgnTimSTR=$(date "+%Y%b%d_%H:%M:%S")
+printf "\n%s - Extracting Data for Plots ...\n" $BgnTimSTR
 time ../plot_bs_Q1.sh $start_height $max_height
 time ../plot_hr_Q1.sh $start_height $max_height
 time ../plot_df_Q1.sh $start_height $max_height
