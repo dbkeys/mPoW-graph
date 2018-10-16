@@ -1,0 +1,42 @@
+Clearing Space / Retention Policy
+Saving useful graphs/data sets
+Saving the Latest (from wholesale day purges)
+
+root@seed.bitmark.co:/home/coins/bitmark-plots# ll la*
+lrwxrwxrwx 1 root root 26 Sep 30 11:14 latest.2HOUR -> 2018Sep30.1538306085-2HOUR/
+lrwxrwxrwx 1 root root 22 Sep 30 11:12 latest.4HOUR -> 2018Sep30.111153-4HOUR/
+lrwxrwxrwx 1 root root 27 Sep 30 06:24 latest.4MONTH -> 2018Sep29.1538250251-4MONTH/
+lrwxrwxrwx 1 root root 20 Sep 30 07:50 latest.DAY -> 2018Sep30.074847-DAY/
+lrwxrwxrwx 1 root root 25 Sep 30 10:48 latest.HOUR -> 2018Sep30.1538304494-HOUR/
+lrwxrwxrwx 1 root root 17 Sep 30 11:14 latest.MONTH -> 2018.09.27-MONTH//
+lrwxrwxrwx 1 root root 25 Sep 30 04:15 latest.WEEK -> 2018Sep30.1538279766-WEEK/
+root@seed.bitmark.co:/home/coins/bitmark-plots# rm latest.MONTH
+root@seed.bitmark.co:/home/coins/bitmark-plots# ln -s 2018.09.27-MONTH latest.MONTH
+root@seed.bitmark.co:/home/coins/bitmark-plots# ll la*
+lrwxrwxrwx 1 root root 26 Sep 30 11:14 latest.2HOUR -> 2018Sep30.1538306085-2HOUR/
+lrwxrwxrwx 1 root root 22 Sep 30 11:12 latest.4HOUR -> 2018Sep30.111153-4HOUR/
+lrwxrwxrwx 1 root root 27 Sep 30 06:24 latest.4MONTH -> 2018Sep29.1538250251-4MONTH/
+lrwxrwxrwx 1 root root 20 Sep 30 07:50 latest.DAY -> 2018Sep30.074847-DAY/
+lrwxrwxrwx 1 root root 25 Sep 30 10:48 latest.HOUR -> 2018Sep30.1538304494-HOUR/
+lrwxrwxrwx 1 root root 16 Sep 30 11:22 latest.MONTH -> 2018.09.27-MONTH/
+lrwxrwxrwx 1 root root 25 Sep 30 04:15 latest.WEEK -> 2018Sep30.1538279766-WEEK/
+
+root@seed.bitmark.co:/home/coins/bitmark-plots# ll lat*
+lrwxrwxrwx 1 coins root 26 Sep 30 12:15 latest.2HOUR -> 2018Sep30.1538309734-2HOUR/
+lrwxrwxrwx 1 coins root 22 Sep 30 12:13 latest.4HOUR -> 2018Sep30.121323-4HOUR/
+lrwxrwxrwx 1 coins root 27 Sep 30 06:24 latest.4MONTH -> 2018Sep29.1538250251-4MONTH/
+lrwxrwxrwx 1 coins root 20 Sep 30 11:52 latest.DAY -> 2018Sep30.115046-DAY/
+lrwxrwxrwx 1 coins root 25 Sep 30 11:48 latest.HOUR -> 2018Sep30.1538308097-HOUR/
+lrwxrwxrwx 1 coins root 16 Sep 30 11:22 latest.MONTH -> 2018.09.27-MONTH/
+lrwxrwxrwx 1 coins root 25 Sep 30 04:15 latest.WEEK -> 2018Sep30.1538279766-WEEK/
+root@seed.bitmark.co:/home/coins/bitmark-plots# rm latest.4MONTH
+root@seed.bitmark.co:/home/coins/bitmark-plots# mv 2018Sep29.1538250251-4MONTH/ 2018.09.29-4MONTH
+root@seed.bitmark.co:/home/coins/bitmark-plots# ln -s 2018.09.29-4MONTH latest.4MONTH
+root@seed.bitmark.co:/home/coins/bitmark-plots# ll lat*
+lrwxrwxrwx 1 coins root 26 Sep 30 12:15 latest.2HOUR -> 2018Sep30.1538309734-2HOUR/
+lrwxrwxrwx 1 coins root 22 Sep 30 12:13 latest.4HOUR -> 2018Sep30.121323-4HOUR/
+lrwxrwxrwx 1 root  root 17 Sep 30 12:22 latest.4MONTH -> 2018.09.29-4MONTH/
+lrwxrwxrwx 1 coins root 20 Sep 30 11:52 latest.DAY -> 2018Sep30.115046-DAY/
+lrwxrwxrwx 1 coins root 25 Sep 30 11:48 latest.HOUR -> 2018Sep30.1538308097-HOUR/
+lrwxrwxrwx 1 coins root 16 Sep 30 11:22 latest.MONTH -> 2018.09.27-MONTH/
+lrwxrwxrwx 1 coins root 25 Sep 30 04:15 latest.WEEK -> 2018Sep30.1538279766-WEEK/
