@@ -22,10 +22,22 @@ do
     printf "\nGoing into folder ..."
     cd $UnixTimeSTR
 
-    echo "Extracting Data for Plots ..."
-    time ../plot_bs_4month.sh
-    time ../plot_hr_4month.sh
-    time ../plot_df_4month.sh
+    # Refactor calculation of start & end blocks ourside of blockspacing, hashrate and difficulty scripts
+    # Excution time of them is such that latest block will change ! Determine at this point for consistency.
+    echo "Determining latest block ... "
+    bitmarkcli="bitmark-cli -datadir=/home/coins/.bitmark"
+    max_height="$($bitmarkcli getinfo | grep '"blocks' | awk '{print $3 }' | awk -F  ',' '{print $1 }')"
+    ### start_height=450947 // example fixed start height: start of mPoW blocks
+    # 4 months is about  ~120  days back
+    # 120 * 720 = 86400   // "A block for every second in a day "
+    let start_height=$max_height-86400
+
+    BgnTimSTR=$(date "+%Y%b%d_%H:%M:%S")
+    printf "%s - Extracting Data for Plots ...\n" $BgnTimSTR
+    time ../plot_bs_4month.sh $start_height $max_height
+    time ../plot_hr_4month.sh $start_height $max_height
+    time ../plot_df_4month.sh $start_height $max_height
+
     echo "Plotting the Data ..."
     time gnuplot ../plot-script-4month
 
